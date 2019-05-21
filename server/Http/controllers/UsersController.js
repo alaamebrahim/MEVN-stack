@@ -2,7 +2,7 @@ const passport = require("../../passport");
 const User = require("../../database/models/user");
 const authInfo = require("../../config/auth");
 const jwt = require("jsonwebtoken");
-
+const log = require("../../logger");
 module.exports = {
   /**
    * Login post proccess
@@ -35,6 +35,10 @@ module.exports = {
    * @param {*} next
    */
   getTest(req, res, next) {
+    log.log({
+      level: "info",
+      message: "test"
+    });
     res.json({ done: true });
   }
 };

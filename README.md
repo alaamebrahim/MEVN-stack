@@ -13,7 +13,8 @@ It's a very simple starter kit of MEVN stack to get me started with simple JS pr
 - Sequalize.
 - Passportjs.
 - Helmet.
-- express-validator
+- express-validator.
+- Winston.
 
 # ALERT!!
 
