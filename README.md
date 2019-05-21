@@ -12,6 +12,8 @@ It's a very simple starter kit of MEVN stack to get me started with simple JS pr
 - Mysql database.
 - Sequalize.
 - Passportjs.
+- Helmet.
+- express-validator
 
 # ALERT!!
 
