@@ -10,6 +10,8 @@ It's a very simple starter kit of MEVN stack to get me started with simple JS pr
 - NodeJs for backend.
 - ExpressJs for server-side/API requests
 - Mysql database.
+- Sequalize.
+- Passportjs.
 
 # ALERT!!
 
