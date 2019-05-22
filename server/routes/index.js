@@ -1,11 +1,14 @@
 "use strict"
+import usersRouter from "./users";
 
-import express from "express"
+export default class appRoutes {
 
-const router = express.Router();
-/* GET home page. */
-router.get("/", function(req, res, next) {
-  res.render("index", { title: "Express" });
-});
-
-export default router;
+  /**
+   * Setup all application routes here
+   * @param app
+   */
+  static setUp(app) {
+    // Routes
+    app.use("/users", usersRouter);
+  }
+}
