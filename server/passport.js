@@ -1,12 +1,16 @@
 "use strict";
 
-const passport = require("passport");
-const LocalStrategy = require("passport-local").Strategy;
-const User = require("./database/models/user");
-const bcrypt = require("bcrypt");
-const JwtStrategy = require("passport-jwt").Strategy;
-const ExtractJwt = require("passport-jwt").ExtractJwt;
-const authInfo = require("./config/auth");
+import passport from "passport";
+import LocalStrategyBase from "passport-local";
+import User from "./database/models/user";
+import bcrypt from "bcrypt";
+import JwtStrategyBase from "passport-jwt";
+import ExtractJwtBase from "passport-jwt";
+import authInfo from "./config/auth";
+
+let LocalStrategy = LocalStrategyBase.Strategy;
+let JwtStrategy = JwtStrategyBase.Strategy;
+let ExtractJwt = ExtractJwtBase.ExtractJwt;
 
 passport.serializeUser(function(user, done) {
   return done(null, user.id);
@@ -28,7 +32,7 @@ passport.deserializeUser(function(id, done) {
 });
 
 // Local strateg
-const local = passport.use(
+let local = passport.use(
   new LocalStrategy(
     {
       usernameField: "user",
@@ -69,7 +73,7 @@ opts.secretOrKey = authInfo.jwtPassKey;
 // opts.issuer = authInfo.issuer;
 // opts.audience = authInfo.audience;
 
-const jwt = passport.use(
+let jwt = passport.use(
   new JwtStrategy(opts, function(jwt_payload, done) {
     console.log(jwt_payload);
     User()

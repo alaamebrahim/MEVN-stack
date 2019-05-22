@@ -1,11 +1,10 @@
 "use strict";
 
-let winston = require("winston");
-let path = require("path");
-let fs = require("fs");
-let mkdirp = require("mkdirp");
-
-let loggerInfo = require("./config/logger");
+import winston from "winston";
+import path from "path";
+import fs from "fs";
+import mkdirp from "mkdirp";
+import loggerInfo from "./config/logger";
 
 let transports = [];
 

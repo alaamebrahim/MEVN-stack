@@ -1,5 +1,5 @@
-const dbInfo = require("./config/db");
-const Sequelize = require("sequelize");
+import dbInfo from "./config/db";
+import Sequelize from "sequelize";
 
 // Option 1: Passing parameters separately
 const connection = new Sequelize(
