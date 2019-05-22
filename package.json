@@ -4,9 +4,9 @@
   "description": "",
   "main": "server/app.js",
   "scripts": {
-    "dev:server": "DEBUG=server:* nodemon ./server/bin/www",
+    "dev:server": "DEBUG=server:* nodemon ./server/bin/www --exec babel-node",
     "dev:client": "webpack-dev-server --inline --progress --config ./client/build/webpack.dev.conf.js",
-    "dev1": "concurrently --kill-others \"DEBUG=server:* nodemon ./server/bin/www\" \"webpack-dev-server --inline --progress --config ./client/build/webpack.dev.conf.js\"",
+    "dev1": "concurrently --kill-others \"DEBUG=server:* nodemon -r esm ./server/bin/www\" \"webpack-dev-server --inline --progress --config ./client/build/webpack.dev.conf.js\"",
     "dev": "npm run dev:server & npm run dev:client",
     "start:client": "npm run dev",
     "unit:client": "jest --config test/unit/jest.conf.js --coverage",
@@ -20,6 +20,7 @@
     "bcrypt": "^3.0.6",
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
+    "esm": "^3.2.25",
     "express": "~4.16.1",
     "express-validator": "^5.3.1",
     "helmet": "^3.18.0",
@@ -41,6 +42,10 @@
     "winston-daily-rotate-file": "^3.9.0"
   },
   "devDependencies": {
+    "@babel/cli": "^7.4.4",
+    "@babel/core": "^7.4.5",
+    "@babel/node": "^7.4.5",
+    "@babel/preset-env": "^7.4.5",
     "autoprefixer": "^7.1.2",
     "babel-core": "^6.22.1",
     "babel-eslint": "^8.2.1",

@@ -1,9 +1,11 @@
-const passport = require("../../passport");
-const User = require("../../database/models/user");
-const authInfo = require("../../config/auth");
-const jwt = require("jsonwebtoken");
-const log = require("../../logger");
-module.exports = {
+"use strict";
+
+import passport from "../../passport";
+import authInfo from "../../config/auth";
+import jwt from "jsonwebtoken";
+import log from "../../logger";
+
+export default class UsersController {
   /**
    * Login post proccess
    * @param {*} req
@@ -16,18 +18,30 @@ module.exports = {
         return next(err);
       }
       if (!user) {
-        return res.json({ error: "error", info: info });
+        return res.json({
+          error: "error",
+          info: info
+        });
       }
       req.logIn(user, function(err) {
         if (err) {
           return next(err);
         }
-        const loggedUser = { id: user.id, name: user.name, email: user.email };
+        const loggedUser = {
+          id: user.id,
+          name: user.name,
+          email: user.email
+        };
         const token = jwt.sign(loggedUser, authInfo.jwtPassKey);
-        return res.json({ success: true, loggedUser, token });
+        return res.json({
+          success: true,
+          loggedUser,
+          token
+        });
       });
     })(req, res, next);
-  },
+  }
+
   /**
    * Test authentication
    * @param {*} req
@@ -41,4 +55,4 @@ module.exports = {
     });
     res.json({ done: true });
   }
-};
+}

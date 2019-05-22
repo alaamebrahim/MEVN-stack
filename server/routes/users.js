@@ -1,18 +1,20 @@
-var express = require("express");
-var router = express.Router();
-const UsersController = require("../Http/controllers/UsersController");
+import express from "express";
+import UsersController from "../Http/controllers/UsersController";
+
+const router = express.Router();
 const passport = require("../passport");
+const userCtrll = new UsersController();
 
 /* GET users listing. */
 router.post("/login", (req, res, next) => {
-  UsersController.postLogin(req, res, next);
+  userCtrll.postLogin(req, res, next);
 });
 
 router.get(
   "/testAuth",
   passport.authenticate("jwt", { session: false }),
   (req, res, next) => {
-    UsersController.getTest(req, res, next);
+      userCtrll.getTest(req, res, next);
   }
 );
 
