@@ -3,8 +3,6 @@ import cookieParser from "cookie-parser"
 import logger from "morgan"
 import passport from "passport"
 import helmet from "helmet";
-
-// ROUTES imports
 import appRoutes from './routes/index';
 
 //
