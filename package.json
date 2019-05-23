@@ -23,6 +23,7 @@
     "esm": "^3.2.25",
     "express": "~4.16.1",
     "express-validator": "^5.3.1",
+    "hashids": "^1.2.2",
     "helmet": "^3.18.0",
     "http-errors": "~1.6.3",
     "jade": "~1.11.0",

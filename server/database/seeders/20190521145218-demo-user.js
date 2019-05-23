@@ -10,7 +10,10 @@ module.exports = {
           name: "admin",
           password: bcrypt.hashSync("admin", 10),
           email: "alaamebrahim91@gmail.com",
-          role_id: 1
+          roleId: 1,
+          isActive: 1,
+          createdAt: new Date(),
+          updatedAt: new Date()
         }
       ],
       {}

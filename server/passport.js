@@ -2,7 +2,7 @@
 
 import passport from "passport";
 import LocalStrategyBase from "passport-local";
-import User from "./database/models/user";
+import User from "./database/models/users";
 import bcrypt from "bcrypt";
 import JwtStrategyBase from "passport-jwt";
 import ExtractJwtBase from "passport-jwt";
@@ -26,6 +26,7 @@ passport.deserializeUser(function (id, done) {
 
         // Check that the user is not disabled or deleted
         if (!user) return done(null, false);
+        if (!user.isActivated) return done(null, false);
 
         return done(null, user);
     });
@@ -75,7 +76,6 @@ opts.secretOrKey = authInfo.jwtPassKey;
 
 let jwt = passport.use(
     new JwtStrategy(opts, function (jwt_payload, done) {
-        console.log(jwt_payload);
         User()
             .findOne({
                 where: {
@@ -84,7 +84,6 @@ let jwt = passport.use(
             })
             .then((user, err) => {
                 if (err) {
-                    console.log(err);
                     return done(err, false);
                 }
                 if (user) {
