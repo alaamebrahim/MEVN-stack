@@ -3,10 +3,12 @@
 import passport from "passport";
 import LocalStrategyBase from "passport-local";
 import User from "./database/models/users";
+import roles from "./database/models/roles";
 import bcrypt from "bcrypt";
 import JwtStrategyBase from "passport-jwt";
 import ExtractJwtBase from "passport-jwt";
 import authInfo from "./config/auth";
+import Hashids from 'hashids';
 
 let LocalStrategy = LocalStrategyBase.Strategy;
 let JwtStrategy = JwtStrategyBase.Strategy;
@@ -41,7 +43,7 @@ let local = passport.use(
             passReqToCallback: true
         },
         function (req, user, password, done) {
-            return User()
+            return User.scope('withPassword')
                 .findOne({
                     where: {
                         name: user
@@ -73,15 +75,21 @@ opts.jwtFromRequest = ExtractJwt.fromAuthHeaderAsBearerToken();
 opts.secretOrKey = authInfo.jwtPassKey;
 // opts.issuer = authInfo.issuer;
 // opts.audience = authInfo.audience;
-
 let jwt = passport.use(
     new JwtStrategy(opts, function (jwt_payload, done) {
-        User()
-            .findOne({
-                where: {
-                    id: jwt_payload.id
-                }
-            })
+        const decodedUserId = new Hashids('userIds', 32).decode(jwt_payload.id);
+        User.findOne({
+            where: {
+                id: decodedUserId
+            },
+            include: [{
+                model: roles,
+                attributes: ['name'],
+                foreignKey: 'roleId'
+            }]
+        }, {
+            // logging: console.log
+        })
             .then((user, err) => {
                 if (err) {
                     return done(err, false);

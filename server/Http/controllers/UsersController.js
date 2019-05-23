@@ -35,14 +35,16 @@ export default class UsersController {
                 if (err) {
                     return next(err);
                 }
+                const hashedUserId     = new Hashids('userIds', 32).encode(user.id);
+                const hashedUserRoleId = new Hashids('roleId', 32).encode(user.roleId);
                 const loggedUser = {
-                    id: new Hashids('user').encode(user.roleId, 5),
                     name: user.name,
                     email: user.email,
                     isActive: user.isActive,
-                    roleId: new Hashids('roles').encode(user.roleId, 4)
+                    id: hashedUserId,
+                    roleId: hashedUserRoleId
                 };
-                const token = jwt.sign(loggedUser, authInfo.jwtPassKey + new Hashids('jwt').encode(user.id, 10));
+                const token = jwt.sign(loggedUser, authInfo.jwtPassKey) ;
                 return res.json({
                     success: true,
                     loggedUser,
