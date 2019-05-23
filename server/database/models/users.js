@@ -1,23 +1,37 @@
 "use strict";
-const DataTypes = require("sequelize");
-const connection = require("../../dbConnection");
+import Role from "./roles";
 
-module.exports = () => {
-    const User = connection.define(
-        "users",
-        {
-            name: DataTypes.STRING,
-            email: DataTypes.STRING,
-            password: DataTypes.STRING,
-            roleId: DataTypes.INTEGER,
-            isActive: DataTypes.INTEGER,
-            createdAt: DataTypes.DATE,
-            updatedAt: DataTypes.DATE,
-        },
-        {}
-    );
-    User.associate = function(models) {
-        // associations can be defined here
-    };
-    return User;
-};
+const DataTypes = require("sequelize");
+const sequelize = require("../../dbConnection");
+
+export default class User extends DataTypes.Model {}
+
+User.init({
+    name: DataTypes.STRING,
+    email: DataTypes.STRING,
+    password: DataTypes.STRING,
+    roleId: DataTypes.INTEGER,
+    isActive: DataTypes.INTEGER,
+    createdAt: DataTypes.DATE,
+    updatedAt: DataTypes.DATE,
+}, {
+    sequelize,
+    modelName: 'users',
+    tableName: 'users',
+    defaultScope: {
+        attributes: {
+            exclude: ['password']
+        }
+    },
+    scopes: {
+        withPassword: {
+            attributes: {
+                include: ['password']
+            }
+        }
+    }
+});
+
+User.belongsTo(Role, {
+    foreignKey: 'roleId'
+});
