@@ -35,8 +35,8 @@ export default class UsersController {
                 if (err) {
                     return next(err);
                 }
-                const hashedUserId     = new Hashids('userIds', 32).encode(user.id);
-                const hashedUserRoleId = new Hashids('roleId', 32).encode(user.roleId);
+                const hashedUserId     = new Hashids(authInfo.userIdKey, 32).encode(user.id);
+                const hashedUserRoleId = new Hashids(authInfo.roleIdKey, 32).encode(user.roleId);
                 const loggedUser = {
                     name: user.name,
                     email: user.email,

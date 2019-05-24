@@ -77,7 +77,7 @@ opts.secretOrKey = authInfo.jwtPassKey;
 // opts.audience = authInfo.audience;
 let jwt = passport.use(
     new JwtStrategy(opts, function (jwt_payload, done) {
-        const decodedUserId = new Hashids('userIds', 32).decode(jwt_payload.id);
+        const decodedUserId = new Hashids(authInfo.userIdKey, 32).decode(jwt_payload.id);
         User.findOne({
             where: {
                 id: decodedUserId
