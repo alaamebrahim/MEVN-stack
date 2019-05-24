@@ -5,6 +5,8 @@ import authInfo from "../../config/auth";
 import jwt from "jsonwebtoken";
 import log from "../../logger";
 import Hashids from 'hashids';
+import roles from "../../database/models/roles";
+import permissions from "../../database/models/permissions";
 
 export default class UsersController {
     /**
@@ -35,8 +37,9 @@ export default class UsersController {
                 if (err) {
                     return next(err);
                 }
-                const hashedUserId     = new Hashids(authInfo.userIdKey, 32).encode(user.id);
+                const hashedUserId = new Hashids(authInfo.userIdKey, 32).encode(user.id);
                 const hashedUserRoleId = new Hashids(authInfo.roleIdKey, 32).encode(user.roleId);
+
                 const loggedUser = {
                     name: user.name,
                     email: user.email,
@@ -44,9 +47,9 @@ export default class UsersController {
                     id: hashedUserId,
                     roleId: hashedUserRoleId,
                     roleName: user.role.name,
-                    permissions: user.role.permissions
+                    userPermissions: user.role.permissions
                 };
-                const token = jwt.sign(loggedUser, authInfo.jwtPassKey) ;
+                const token = jwt.sign(loggedUser, authInfo.jwtPassKey);
                 return res.json({
                     success: true,
                     loggedUser,

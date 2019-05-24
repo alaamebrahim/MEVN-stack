@@ -3,7 +3,7 @@
 import passport from "passport";
 import LocalStrategyBase from "passport-local";
 import User from "./database/models/users";
-import Role from "./database/models/roles";
+import roles from "./database/models/roles";
 import bcrypt from "bcrypt";
 import JwtStrategyBase from "passport-jwt";
 import ExtractJwtBase from "passport-jwt";
@@ -49,7 +49,7 @@ let local = passport.use(
                         name: user
                     },
                     include: [{
-                        model: Role,
+                        model: roles,
                         attributes: ['name'],
                         foreignKey: 'roleId',
                     }]
@@ -88,7 +88,7 @@ let jwt = passport.use(
                 id: decodedUserId
             },
             include: [{
-                model: Role,
+                model: roles,
                 attributes: ['name'],
                 foreignKey: 'roleId'
             }]

@@ -1,12 +1,12 @@
 "use strict";
-import Role from "./roles";
+import roles from "./roles";
 
 const DataTypes = require("sequelize");
 const sequelize = require("../../dbConnection");
 
-export default class User extends DataTypes.Model {}
+export default class users extends DataTypes.Model {}
 
-User.init({
+users.init({
     name: DataTypes.STRING,
     email: DataTypes.STRING,
     password: DataTypes.STRING,
@@ -16,7 +16,6 @@ User.init({
     updatedAt: DataTypes.DATE,
 }, {
     sequelize,
-    modelName: 'users',
     tableName: 'users',
     defaultScope: {
         attributes: {
@@ -32,6 +31,6 @@ User.init({
     }
 });
 
-User.belongsTo(Role, {
+users.belongsTo(roles, {
     foreignKey: 'roleId'
 });
