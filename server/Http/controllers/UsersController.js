@@ -57,7 +57,6 @@ export default class UsersController {
                         roleName: user.role.name,
                         userPermissions: role.permissions
                     };
-                    console.log(loggedUser);
                     const token = jwt.sign(loggedUser, authInfo.jwtPassKey);
                     return res.json({
                         success: true,
