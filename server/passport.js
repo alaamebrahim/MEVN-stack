@@ -88,7 +88,7 @@ let jwt = passport.use(
                 id: decodedUserId
             },
             include: [{
-                model: roles,
+                model: Role,
                 attributes: ['name'],
                 foreignKey: 'roleId'
             }]

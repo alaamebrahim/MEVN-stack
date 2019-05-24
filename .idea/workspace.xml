@@ -2,11 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="59f12e91-8980-47c3-ac61-a37314305fee" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/server/database/seeders/20190523153323-create-main-roles.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/Http/controllers/UsersController.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/Http/controllers/UsersController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/database/models/roles.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/database/models/roles.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/database/seeders/20190521145218-demo-user.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/database/seeders/20190521145218-demo-user.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/passport.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/passport.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -21,10 +16,13 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/server/database/models/users.js">
+        <entry file="file://$PROJECT_DIR$/server/database/models/Permission.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="35" column="24" lean-forward="true" selection-start-line="35" selection-start-column="24" selection-end-line="35" selection-end-column="24" />
+            <state relative-caret-position="262">
+              <caret line="19" column="11" selection-start-line="19" selection-start-column="11" selection-end-line="19" selection-end-column="11" />
+              <folding>
+                <element signature="e#14#40#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -32,29 +30,11 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/server/passport.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="42">
-              <caret line="53" column="45" selection-start-line="53" selection-start-column="45" selection-end-line="53" selection-end-column="45" />
+            <state relative-caret-position="102">
+              <caret line="90" column="28" selection-start-line="90" selection-start-column="28" selection-end-line="90" selection-end-column="28" />
               <folding>
                 <element signature="e#15#47#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/server/database/models/roles.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="63">
-              <caret line="3" selection-start-line="3" selection-end-line="3" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/server/database/models/index.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="157">
-              <caret line="37" lean-forward="true" selection-start-line="37" selection-end-line="37" />
             </state>
           </provider>
         </entry>
@@ -169,6 +149,19 @@
               <item name="database" type="462c0819:PsiDirectoryNode" />
               <item name="seeders" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="twitterJs" type="b2602c69:ProjectViewProjectNode" />
+              <item name="twitterJs" type="462c0819:PsiDirectoryNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
+              <item name="Http" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="twitterJs" type="b2602c69:ProjectViewProjectNode" />
+              <item name="twitterJs" type="462c0819:PsiDirectoryNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
+              <item name="Http" type="462c0819:PsiDirectoryNode" />
+              <item name="controllers" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -235,7 +228,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="23768000" />
+    <option name="totallyTimeSpent" value="23810000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1366" y="0" width="1366" height="729" extended-state="6" />
@@ -437,9 +430,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/database/seeders/20190523153622-create-test-permission.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/server/database/seeders/20190523153622-create-test-permission.js" />
     <entry file="file://$PROJECT_DIR$/server/database/seeders/20190523153323-create-main-roles.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-223" />
@@ -469,16 +460,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/database/migrations/20190524143152-create-role-permissions.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/database/models/role_permissions.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="20" column="15" lean-forward="true" selection-start-line="20" selection-start-column="15" selection-end-line="20" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/server/database/migrations/20190524143152-create-role-permissions.js" />
+    <entry file="file://$PROJECT_DIR$/server/database/models/role_permissions.js" />
     <entry file="file://$PROJECT_DIR$/server/database/models/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="157">
@@ -493,23 +476,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/database/models/permissions.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-263">
-          <caret line="3" column="14" selection-start-line="3" selection-start-column="14" selection-end-line="3" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/database/migrations/20190523144238-create-permissions.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/database/seeders/20190523161720-create_role_permissions.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="107">
-          <caret line="16" column="42" selection-start-line="16" selection-start-column="42" selection-end-line="16" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/server/database/models/permissions.js" />
+    <entry file="file://$PROJECT_DIR$/server/database/migrations/20190523144238-create-permissions.js" />
+    <entry file="file://$PROJECT_DIR$/server/database/seeders/20190523161720-create_role_permissions.js" />
     <entry file="file://$PROJECT_DIR$/server/database/models/roles.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="63">
@@ -517,10 +486,27 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/server/database/models/RolePermissions.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="36">
+          <caret line="11" selection-start-line="11" selection-end-line="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/database/models/Permission.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="262">
+          <caret line="19" column="11" selection-start-line="19" selection-start-column="11" selection-end-line="19" selection-end-column="11" />
+          <folding>
+            <element signature="e#14#40#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/server/passport.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="42">
-          <caret line="53" column="45" selection-start-line="53" selection-start-column="45" selection-end-line="53" selection-end-column="45" />
+        <state relative-caret-position="102">
+          <caret line="90" column="28" selection-start-line="90" selection-start-column="28" selection-end-line="90" selection-end-column="28" />
           <folding>
             <element signature="e#15#47#0" expanded="true" />
           </folding>
