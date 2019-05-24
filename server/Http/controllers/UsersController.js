@@ -37,24 +37,34 @@ export default class UsersController {
                 if (err) {
                     return next(err);
                 }
+                // Hashing ids
                 const hashedUserId = new Hashids(authInfo.userIdKey, 32).encode(user.id);
                 const hashedUserRoleId = new Hashids(authInfo.roleIdKey, 32).encode(user.roleId);
 
-                const loggedUser = {
-                    name: user.name,
-                    email: user.email,
-                    isActive: user.isActive,
-                    id: hashedUserId,
-                    roleId: hashedUserRoleId,
-                    roleName: user.role.name,
-                    userPermissions: user.role.permissions
-                };
-                const token = jwt.sign(loggedUser, authInfo.jwtPassKey);
-                return res.json({
-                    success: true,
-                    loggedUser,
-                    token
-                });
+                // Get user permissions
+                roles.findOne({
+                    where: {id: user.roleId},
+                    include: [{model: permissions, attributes: ['key']}]
+                }).then(role => {
+
+                    // User object passed to frontend
+                    const loggedUser = {
+                        name: user.name,
+                        email: user.email,
+                        isActive: user.isActive,
+                        id: hashedUserId,
+                        roleId: hashedUserRoleId,
+                        roleName: user.role.name,
+                        userPermissions: role.permissions
+                    };
+                    console.log(loggedUser);
+                    const token = jwt.sign(loggedUser, authInfo.jwtPassKey);
+                    return res.json({
+                        success: true,
+                        loggedUser,
+                        token
+                    });
+                })
             });
         })(req, res, next);
     }
