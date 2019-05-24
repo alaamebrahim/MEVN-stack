@@ -42,7 +42,9 @@ export default class UsersController {
                     email: user.email,
                     isActive: user.isActive,
                     id: hashedUserId,
-                    roleId: hashedUserRoleId
+                    roleId: hashedUserRoleId,
+                    roleName: user.role.name,
+                    permissions: user.role.permissions
                 };
                 const token = jwt.sign(loggedUser, authInfo.jwtPassKey) ;
                 return res.json({

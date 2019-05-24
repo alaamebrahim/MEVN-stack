@@ -3,7 +3,7 @@
 import passport from "passport";
 import LocalStrategyBase from "passport-local";
 import User from "./database/models/users";
-import roles from "./database/models/roles";
+import Role from "./database/models/roles";
 import bcrypt from "bcrypt";
 import JwtStrategyBase from "passport-jwt";
 import ExtractJwtBase from "passport-jwt";
@@ -47,7 +47,12 @@ let local = passport.use(
                 .findOne({
                     where: {
                         name: user
-                    }
+                    },
+                    include: [{
+                        model: Role,
+                        attributes: ['name'],
+                        foreignKey: 'roleId',
+                    }]
                 })
                 .then((user, err) => {
                     if (err) {
