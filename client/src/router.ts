@@ -1,26 +1,69 @@
 import Vue from "vue";
 import Router from "vue-router";
 import Home from "./core/views/Home.vue";
-import users from "./core/routes/users";
+import Login from "@/core/components/users/Login.vue";
+import store from "./store";
+import NotifyService from "@/core/services/NotifyService";
+import NotFound from "@/core/components/NotFound.vue";
 
 Vue.use(Router);
 
-export default new Router({
+const router = new Router({
   routes: [
     {
       path: "/",
       name: "home",
-      component: Home
-    },
-    {
-      path: "/about",
-      name: "about",
-      component: () => import("./core/views/About.vue")
+      component: Home,
+      meta: {
+        permissions: ["view_admin"]
+      }
     },
     {
       path: "/login",
       name: "login",
-      component: () => import("./core/views/Login.vue")
-    }
+      component: Login
+    },
+    { path: "*", component: NotFound }
   ]
 });
+
+router.beforeEach((to, from, next) => {
+  // redirect to login page if not logged in and trying to access a restricted page
+  const publicPages = ["/login"];
+  const authRequired = !publicPages.includes(to.path);
+  const loggedIn = localStorage.getItem("token");
+
+  // Check if user is logged in
+  if (authRequired && !loggedIn) {
+    return next({ name: "login" });
+  } else {
+    // Check user permissions for the next route
+    if (to.matched.some(record => record.meta.permissions)) {
+      if (!store.state.users.status.isLogged) {
+        NotifyService.alert(
+          "You do not have the right permission to access this page."
+        );
+        return next({ name: "login" });
+      }
+      let hasPermission = false;
+      to.meta.permissions.forEach((permission: Array<string>) => {
+        hasPermission =
+          store.getters.getUserPermissions.indexOf(permission) !== -1;
+      });
+
+      // User has no access to th page
+      if (!hasPermission) {
+        NotifyService.alert(
+          "You do not have the right permission to access this page."
+        );
+        return next({ name: "login" });
+      } else {
+        return next();
+      }
+    } else {
+      // We are fine
+      next();
+    }
+  }
+});
+export default router;

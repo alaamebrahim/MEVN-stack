@@ -8,7 +8,16 @@ export default class appRoutes {
    * @param app
    */
   static setUp(app) {
+    this.allowCors(app);
     // Routes
-    app.use("/users", usersRouter);
+    app.use("/api/users", usersRouter);
+  }
+
+  static allowCors(app){
+    app.use(function(req, res, next) {
+      res.header("Access-Control-Allow-Origin", "*");
+      res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+      next();
+    });
   }
 }
