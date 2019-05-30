@@ -59,7 +59,10 @@ export default class Login extends Vue {
     super();
     this.userService = new UserService();
     this.$store.dispatch("setUserNotLogged", null);
-    if (localStorage.getItem("LoginTries")) {
+    if (
+      localStorage.getItem("LoginTries") &&
+      localStorage.getItem("LoginTries") !== null
+    ) {
       this.$store.dispatch("setLoginTries", localStorage.getItem("LoginTries"));
     }
     // console.log(this.$store.getters.)
