@@ -33,14 +33,14 @@ router.beforeEach((to, from, next) => {
   const publicPages = ["/login"];
   const authRequired = !publicPages.includes(to.path);
   const loggedIn = localStorage.getItem("token");
-
   // Check if user is logged in
   if (authRequired && !loggedIn) {
+    console.log("0");
     return next({ name: "login" });
   } else {
     // Check user permissions for the next route
     if (to.matched.some(record => record.meta.permissions)) {
-      if (!store.state.users.status.isLogged) {
+      if (!loggedIn) {
         NotifyService.alert(i18n.tc("login.permissionDenied"));
         return next({ name: "login" });
       }

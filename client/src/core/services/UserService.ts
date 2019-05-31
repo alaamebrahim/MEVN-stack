@@ -38,10 +38,12 @@ export default class UserService {
               })
               .toString()
           );
-
           // save token to localStorage
           localStorage.setItem("token", res.data.token);
-
+          localStorage.setItem(
+            "userPermissions",
+            JSON.stringify(res.data.loggedUser.userPermissions)
+          );
           // returned object
           return {
             success: true,

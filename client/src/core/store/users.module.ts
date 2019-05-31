@@ -5,7 +5,7 @@ const moment = require("moment");
 const usersModule: Module<any, any> = {
   state: {
     status: {
-      isLogged: false,
+      isLogged: null,
       user: null
     },
     loginTries: 0,
@@ -19,6 +19,12 @@ const usersModule: Module<any, any> = {
       // Remove token from localStorage
       if (payload.isLogged === false) {
         localStorage.removeItem("token");
+      }
+
+      // Remove login tries on login
+      if (payload.isLogged === true) {
+        localStorage.removeItem("LoginTries");
+        localStorage.removeItem("blockedSeconds");
       }
     },
     SET_LOGIN_TRIES_COUNT(state, payload) {
@@ -92,16 +98,24 @@ const usersModule: Module<any, any> = {
      * @param state
      */
     getUserPermissions(state) {
-      if (state.status.isLogged !== true) {
+      if (state.status.isLogged === false) {
         return null;
       }
 
-      if (state.status.user.userPermissions === null) {
+      const userPerms = localStorage.getItem("userPermissions");
+      const userPermissions: Array<string> =
+        userPerms !== null ? JSON.parse(userPerms) : [];
+
+      if (userPermissions.length === 0 && state.status.user === null) {
         return null;
+      }
+
+      if (state.status.user !== null) {
+        return state.status.user.userPermissions.map((perm: any) => perm.key);
       }
 
       // return permissions keys
-      return state.status.user.userPermissions.map((perm: any) => perm.key);
+      return userPermissions.map((perm: any) => perm.key);
     },
     getLoginTriesCount(state) {
       return state.loginTries;
