@@ -48,13 +48,13 @@
 <script lang="ts">
 import { Component, Prop, Vue } from "vue-property-decorator";
 import UserService from "@/core/services/UserService";
-import appConfig from "@/core/config/app.config";
+import appConfig, {AppConfig} from "@/core/config/app.config";
 @Component({})
 export default class Login extends Vue {
   username: string = "";
   password: string = "";
   userService: UserService;
-  appConfig: any;
+  appConfig: AppConfig;
 
   constructor() {
     super();

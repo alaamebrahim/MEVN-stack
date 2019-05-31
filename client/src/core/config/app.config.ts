@@ -1,3 +1,9 @@
+export interface AppConfig {
+  appTitle: string;
+  maxLoginTries: number;
+  secondsToBlockUserLogin: number;
+}
+
 const appConfig = {
   /**
    * Application title.
