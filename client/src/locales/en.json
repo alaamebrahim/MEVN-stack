@@ -1,0 +1,13 @@
+{
+  "login": {
+    "title": "Welcome to {appName}",
+    "username": "Username",
+    "password": "Password",
+    "login": "LOGIN",
+    "preventLoginMessage": "You have to wait {seconds} second(s) before trying again.",
+    "permissionDenied": "You do not have the right permission to access this page.",
+    "bad_credentials": "Bad login information provided!",
+    "general_error": "An error has happened",
+    "login_success": "Login successful! Welcome back, {username}"
+  }
+}

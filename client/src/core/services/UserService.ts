@@ -1,5 +1,6 @@
 import ApiService from "@/core/services/ApiService";
 import NotifyService from "@/core/services/NotifyService";
+import { i18n } from "@/i18n";
 
 export default class UserService {
   apiService: ApiService;
@@ -21,7 +22,7 @@ export default class UserService {
           res.data.code === undefined ||
           (res.data && res.data.code === 401)
         ) {
-          NotifyService.alert("Bad login information provided!");
+          NotifyService.alert(i18n.tc("login.bad_credentials"));
           return {
             success: false,
             user: null
@@ -29,8 +30,13 @@ export default class UserService {
         }
 
         if (res.data && res.data.code === 200) {
+          const username = res.data.loggedUser.name;
           NotifyService.success(
-            "Login successful! Welcome back, " + res.data.loggedUser.name
+            i18n
+              .t("login.login_success", {
+                username: username
+              })
+              .toString()
           );
 
           // save token to localStorage
@@ -44,7 +50,7 @@ export default class UserService {
         }
       })
       .catch(err => {
-        NotifyService.alert("An error has happened");
+        NotifyService.alert(i18n.tc("login.general_error"));
         return {
           success: false,
           user: null

@@ -5,6 +5,7 @@ import Login from "@/core/components/users/Login.vue";
 import store from "./store";
 import NotifyService from "@/core/services/NotifyService";
 import NotFound from "@/core/components/NotFound.vue";
+import { i18n } from "@/i18n";
 
 Vue.use(Router);
 
@@ -40,9 +41,7 @@ router.beforeEach((to, from, next) => {
     // Check user permissions for the next route
     if (to.matched.some(record => record.meta.permissions)) {
       if (!store.state.users.status.isLogged) {
-        NotifyService.alert(
-          "You do not have the right permission to access this page."
-        );
+        NotifyService.alert(i18n.tc("login.permissionDenied"));
         return next({ name: "login" });
       }
       let hasPermission = false;
@@ -53,9 +52,7 @@ router.beforeEach((to, from, next) => {
 
       // User has no access to th page
       if (!hasPermission) {
-        NotifyService.alert(
-          "You do not have the right permission to access this page."
-        );
+        NotifyService.alert(i18n.tc("login.permissionDenied"));
         return next({ name: "login" });
       } else {
         return next();

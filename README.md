@@ -16,7 +16,7 @@ It's a very simple starter kit of MEVN stack to get me started with simple JS pr
 - express-validator.
 - Winston.
 - Vue-notifications.
-- Vuejs-logger.
+- vuejs-i18n.
 
 # ALERT!!
 

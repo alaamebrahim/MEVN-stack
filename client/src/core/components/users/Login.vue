@@ -1,12 +1,14 @@
 <template>
   <div class="login">
-    <h1 class="page-title">Welcome to {{ appConfig.appTitle }}</h1>
+    <h1 class="page-title">
+      {{ $t("login.title", { appName: appConfig.appTitle }) }}
+    </h1>
     <div class="container login-container">
       <div class="row">
         <div class="col-12 text-center">
           <form method="post" @submit.prevent="doLogin">
             <div class="form-group">
-              <label for="username" class="">Username</label>
+              <label for="username" class="">{{ $t("login.username") }}</label>
               <input
                 type="text"
                 id="username"
@@ -16,7 +18,7 @@
               />
             </div>
             <div class="form-group">
-              <label for="password">Password</label>
+              <label for="password">{{ $t("login.password") }}</label>
               <input
                 type="password"
                 id="password"
@@ -30,15 +32,18 @@
               type="submit"
               class="btn btn-primary m-2 text-center submit"
             >
-              LOGIN
+              {{ $t("login.login") }}
             </button>
           </form>
         </div>
         <span
           class="alert alert-danger"
           v-if="$store.getters.getLoginTriesCount >= 3"
-          >You have to wait {{ $store.state.users.blockedSeconds }} second(s)
-          before trying again.</span
+          >{{
+            $t("login.preventLoginMessage", {
+              seconds: $store.state.users.blockedSeconds
+            })
+          }}</span
         >
       </div>
     </div>
@@ -48,7 +53,8 @@
 <script lang="ts">
 import { Component, Prop, Vue } from "vue-property-decorator";
 import UserService from "@/core/services/UserService";
-import appConfig, {AppConfig} from "@/core/config/app.config";
+import appConfig, { AppConfig } from "@/core/config/app.config";
+
 @Component({})
 export default class Login extends Vue {
   username: string = "";
