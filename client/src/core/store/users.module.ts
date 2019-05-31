@@ -1,5 +1,5 @@
 import { Module } from "vuex";
-
+import appConfig from "../config/app.config";
 const moment = require("moment");
 
 const usersModule: Module<any, any> = {
@@ -32,7 +32,7 @@ const usersModule: Module<any, any> = {
       localStorage.setItem("LoginTries", state.loginTries);
 
       // Several fail logins
-      if (state.loginTries >= 3) {
+      if (state.loginTries >= appConfig.maxLoginTries) {
         let startTime = moment().format();
 
         // Setup seconds that user will be blocked.
@@ -42,7 +42,7 @@ const usersModule: Module<any, any> = {
             ? 0
             : parseInt(blockedSeconds) > 0
             ? parseInt(blockedSeconds)
-            : 60;
+            : appConfig.secondsToBlockUserLogin;
 
         // After 30 sec user can try again.
         const handlePreventLoginAttempts = () => {

@@ -1,6 +1,6 @@
 <template>
   <div class="login">
-    <h1 class="page-title">Welcome to APP</h1>
+    <h1 class="page-title">Welcome to {{ appConfig.appTitle }}</h1>
     <div class="container login-container">
       <div class="row">
         <div class="col-12 text-center">
@@ -48,15 +48,17 @@
 <script lang="ts">
 import { Component, Prop, Vue } from "vue-property-decorator";
 import UserService from "@/core/services/UserService";
-
+import appConfig from "@/core/config/app.config";
 @Component({})
 export default class Login extends Vue {
   username: string = "";
   password: string = "";
   userService: UserService;
+  appConfig: any;
 
   constructor() {
     super();
+    this.appConfig = appConfig;
     this.userService = new UserService();
     this.$store.dispatch("setUserNotLogged", null);
     if (
