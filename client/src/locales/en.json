@@ -9,5 +9,8 @@
     "bad_credentials": "Bad login information provided!",
     "general_error": "An error has happened",
     "login_success": "Login successful! Welcome back, {username}"
+  },
+  "users": {
+    "title": "Users"
   }
 }

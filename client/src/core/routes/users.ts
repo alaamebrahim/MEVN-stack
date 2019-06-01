@@ -1,19 +1,15 @@
 import { RouteConfig } from "vue-router";
-import HelloWorld from "@/core/components/HelloWorld.vue";
+import ViewUsers from "@/core/components/users/ViewUsers.vue";
 
 const users: RouteConfig[] = [];
 
 users.push({
-  path: "test",
-  name: "test",
-  component: HelloWorld,
+  path: "users",
+  name: "usersIndex",
+  component: ViewUsers,
   meta: {
     permissions: ["view_admin"]
   }
 });
 
-users.push({
-  path: "test2",
-  component: HelloWorld
-});
 export default users;
