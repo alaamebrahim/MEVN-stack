@@ -18,4 +18,12 @@ router.get(
   }
 );
 
+router.get(
+    "/roles/get-all",
+    passport.authenticate("jwt", { session: false }),
+    (req, res, next) => {
+        UsersController.getRoles(req, res, next);
+    }
+);
+
 module.exports = router;

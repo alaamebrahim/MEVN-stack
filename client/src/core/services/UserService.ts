@@ -27,4 +27,22 @@ export default class UserService {
         };
       });
   }
+
+  /**
+   * Get all roles
+   */
+  getRoles(): Promise<any> {
+    return this.apiService
+      .get("users/roles/get-all")
+      .then(res => {
+        return res.data;
+      })
+      .catch(err => {
+        NotifyService.alert(i18n.tc("general_error"));
+        return {
+          success: false,
+          users: []
+        };
+      });
+  }
 }

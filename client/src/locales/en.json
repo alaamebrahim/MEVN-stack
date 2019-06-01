@@ -20,7 +20,12 @@
     "desc": "DESC",
     "last": "LAST",
     "none": "NONE",
-    "type_to_search": "Type to search"
+    "type_to_search": "Type to search",
+    "add_new": "New User",
+    "username": "Username",
+    "password": "Password",
+    "email": "Email",
+    "roles": "User role"
   },
   "buttons": {
     "add": "Add new",
