@@ -52,22 +52,22 @@
 
 <script lang="ts">
 import { Component, Prop, Vue } from "vue-property-decorator";
-import UserService from "@/core/services/UserService";
+import LoginService from "@/core/services/LoginService";
 import appConfig, { AppConfig } from "@/core/config/app.config";
 
 @Component({})
 export default class Login extends Vue {
   username: string = "";
   password: string = "";
-  userService: UserService;
+  userService: LoginService;
   appConfig: AppConfig;
 
   constructor() {
     super();
     this.appConfig = appConfig;
-    this.userService = new UserService();
+    this.userService = new LoginService();
     this.$store.dispatch("setUserNotLogged", null);
-    UserService.unAuthenticateUser();
+    LoginService.unAuthenticateUser();
     if (
       localStorage.getItem("LoginTries") &&
       localStorage.getItem("LoginTries") !== null

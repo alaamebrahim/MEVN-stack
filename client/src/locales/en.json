@@ -11,6 +11,25 @@
     "login_success": "Login successful! Welcome back, {username}"
   },
   "users": {
-    "title": "Users"
-  }
+    "title": "Users",
+    "filter": "Filter",
+    "sort_direction": "Sort direction",
+    "sort": "Sort",
+    "per_page": "Per page",
+    "asc": "ASC",
+    "desc": "DESC",
+    "last": "LAST",
+    "none": "NONE",
+    "type_to_search": "Type to search"
+  },
+  "buttons": {
+    "add": "Add new",
+    "update": "Update",
+    "delete": "Delete",
+    "save": "Save",
+    "cancel": "Cancel",
+    "close": "Close",
+    "clear": "Clear"
+  },
+  "general_error": "An error has happened"
 }

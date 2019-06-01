@@ -1,5 +1,5 @@
 import axios from "axios";
-import UserService from "@/core/services/UserService";
+import LoginService from "@/core/services/LoginService";
 
 export default class ApiService {
   /**
@@ -8,12 +8,11 @@ export default class ApiService {
    */
   authHeader() {
     // return authorization header with jwt token
-    let token = UserService.getUserToken();
+    let token = LoginService.getUserToken();
     let user =
-      UserService.getUserData() === null
+      LoginService.getUserData() === null
         ? null
-        : UserService.getUserData().loggedUser;
-
+        : LoginService.getUserData().loggedUser;
     if (user && token) {
       return { Authorization: "Bearer " + token };
     } else {
@@ -35,6 +34,13 @@ export default class ApiService {
       method: method,
       url: this.getApi() + url,
       data: data
+    });
+  }
+
+  get(url: string): Promise<any> {
+    return axios.get(this.getApi() + url, {
+      method: "GET",
+      headers: this.authHeader()
     });
   }
 }

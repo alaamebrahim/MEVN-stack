@@ -52,7 +52,7 @@
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
 import appConfig from "@/core/config/app.config";
-import UserService from "@/core/services/UserService";
+import LoginService from "@/core/services/LoginService";
 
 @Component
 export default class Navbar extends Vue {
@@ -86,13 +86,13 @@ export default class Navbar extends Vue {
   }
 
   checkUserLoggedIn() {
-    if (UserService.isAuthenticated()) {
+    if (LoginService.isAuthenticated()) {
       this.userLogged = true;
     }
   }
 
   getUserName(): string {
-    return UserService.getUserData().loggedUser.name;
+    return LoginService.getUserData().loggedUser.name;
   }
 }
 </script>

@@ -4,7 +4,7 @@
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
 import appConfig from "@/core/config/app.config";
-import UserService from "@/core/services/UserService";
+import LoginService from "@/core/services/LoginService";
 
 @Component
 export default class Sidebar extends Vue {
@@ -19,7 +19,7 @@ export default class Sidebar extends Vue {
   checkUserLoggedIn() {
     if (
       this.$store.state.users.status.isLogged === true ||
-      UserService.isAuthenticated()
+      LoginService.isAuthenticated()
     ) {
       this.userLogged = true;
     }

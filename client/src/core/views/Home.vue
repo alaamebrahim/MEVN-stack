@@ -1,11 +1,8 @@
 <template>
   <div>
     <Navbar />
-    <b-container>
+    <b-container class="mt-3">
       <b-row>
-        <b-col cols="2">
-          <Sidebar />
-        </b-col>
         <b-col>
           <router-view />
         </b-col>

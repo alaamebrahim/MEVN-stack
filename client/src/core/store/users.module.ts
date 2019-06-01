@@ -1,6 +1,6 @@
 import { Module } from "vuex";
 import appConfig from "../config/app.config";
-import UserService from "@/core/services/UserService";
+import LoginService from "@/core/services/LoginService";
 const moment = require("moment");
 
 const usersModule: Module<any, any> = {
@@ -18,7 +18,7 @@ const usersModule: Module<any, any> = {
 
       // Remove token from localStorage
       if (payload.isLogged === false) {
-        UserService.unAuthenticateUser();
+        LoginService.unAuthenticateUser();
       }
 
       // Remove login tries on login

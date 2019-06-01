@@ -6,7 +6,7 @@ import store from "./store";
 import NotifyService from "@/core/services/NotifyService";
 import NotFound from "@/core/components/NotFound.vue";
 import { i18n } from "@/i18n";
-import UserService from "@/core/services/UserService";
+import LoginService from "@/core/services/LoginService";
 import dashboard from "@/core/routes/dashboard";
 
 Vue.use(Router);
@@ -39,7 +39,7 @@ router.beforeEach((to, from, next) => {
   // redirect to login page if not logged in and trying to access a restricted page
   const publicPages = ["/login"];
   const authRequired = !publicPages.includes(to.path);
-  const loggedIn = UserService.isAuthenticated();
+  const loggedIn = LoginService.isAuthenticated();
   // Check if user is logged in
   if (authRequired && !loggedIn) {
     return next({ name: "login" });

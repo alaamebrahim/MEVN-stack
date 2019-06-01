@@ -8,7 +8,7 @@
 <script>
 import Vue from "vue";
 import { Component } from "vue-property-decorator";
-import UserService from "./core/services/UserService";
+import LoginService from "./core/services/LoginService";
 
 @Component({
   components: {}
