@@ -1,5 +1,10 @@
 // Main theme colors
-$primary: #FCFCFC;
-$secondary: #83FFE6;
-$accent: #FF5F5F;
-$fourth: #2C2C2C;
+$primary-a: #fcfcfc;
+$secondary-a: #83ffe6;
+$accent-a: #ff5f5f;
+$fourth-a: #2c2c2c;
+
+// bootstrap
+
+$cyan:    $fourth-a !default;
+

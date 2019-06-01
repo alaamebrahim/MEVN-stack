@@ -1,12 +1,12 @@
 import { Module } from "vuex";
 import appConfig from "../config/app.config";
+import UserService from "@/core/services/UserService";
 const moment = require("moment");
 
 const usersModule: Module<any, any> = {
   state: {
     status: {
-      isLogged: null,
-      user: null
+      isLogged: null
     },
     loginTries: 0,
     blockedSeconds: 0
@@ -18,7 +18,7 @@ const usersModule: Module<any, any> = {
 
       // Remove token from localStorage
       if (payload.isLogged === false) {
-        localStorage.removeItem("token");
+        UserService.unAuthenticateUser();
       }
 
       // Remove login tries on login
@@ -76,14 +76,12 @@ const usersModule: Module<any, any> = {
   actions: {
     setUserLogged(context, user) {
       context.commit("SET_LOGIN_STATUS", {
-        isLogged: true,
-        user: user
+        isLogged: true
       });
     },
     setUserNotLogged(context, user) {
       context.commit("SET_LOGIN_STATUS", {
-        isLogged: false,
-        user: null
+        isLogged: false
       });
     },
     setLoginTries(context, count) {
@@ -102,17 +100,11 @@ const usersModule: Module<any, any> = {
         return null;
       }
 
-      const userPerms = localStorage.getItem("userPermissions");
+      const userData = localStorage.getItem("userData");
       const userPermissions: Array<string> =
-        userPerms !== null ? JSON.parse(userPerms) : [];
-
-      if (userPermissions.length === 0 && state.status.user === null) {
-        return null;
-      }
-
-      if (state.status.user !== null) {
-        return state.status.user.userPermissions.map((perm: any) => perm.key);
-      }
+        userData !== null
+          ? JSON.parse(userData).loggedUser.userPermissions
+          : [];
 
       // return permissions keys
       return userPermissions.map((perm: any) => perm.key);

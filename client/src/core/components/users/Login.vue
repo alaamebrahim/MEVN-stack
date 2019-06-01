@@ -67,13 +67,13 @@ export default class Login extends Vue {
     this.appConfig = appConfig;
     this.userService = new UserService();
     this.$store.dispatch("setUserNotLogged", null);
+    UserService.unAuthenticateUser();
     if (
       localStorage.getItem("LoginTries") &&
       localStorage.getItem("LoginTries") !== null
     ) {
       this.$store.dispatch("setLoginTries", localStorage.getItem("LoginTries"));
     }
-    // console.log(this.$store.getters.)
   }
 
   /**
@@ -102,8 +102,14 @@ export default class Login extends Vue {
 
 <style scoped lang="scss">
 @import "../../../assets/scss/vars";
+.login {
+  padding-top: 100px;
+  background: $fourth-a;
+  width: 100%;
+  height: 100vh;
+}
 .page-title {
-  background: $accent;
+  background: $accent-a;
   max-width: 360px;
   margin: 0 auto;
   border-radius: 30px 30px 0 0;
@@ -116,9 +122,10 @@ export default class Login extends Vue {
 .login-container {
   max-width: 360px;
   max-height: 360px;
-  background: $primary;
+  background: $primary-a;
   padding: 1rem;
   border-radius: 0 0 30px 30px;
+  border: 1px solid $accent-a;
   position: relative;
 
   @media (max-width: 369px) {
@@ -131,12 +138,12 @@ export default class Login extends Vue {
     font-style: italic;
     font-weight: bold;
     font-size: 0.85rem;
-    color: $accent;
+    color: $accent-a;
   }
   .username,
   .password {
     border-radius: 0 0 10px 10px;
-    color: $fourth;
+    color: $fourth-a;
     font-family: tahoma, Arial, sans-serif;
     font-size: 1.2rem;
     text-align: left;
@@ -144,17 +151,17 @@ export default class Login extends Vue {
   }
 
   .submit {
-    background: $accent;
+    background: $accent-a;
     border: 0;
     padding: 0.4rem 3rem;
-    color: $primary;
+    color: $primary-a;
     font-size: 1.15rem;
     font-weight: bold;
     width: 90%;
 
     &:hover {
-      background: $secondary;
-      color: $fourth;
+      background: $secondary-a;
+      color: $fourth-a;
     }
   }
 }

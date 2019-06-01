@@ -1,29 +1,39 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link v-if="$store.state.users.status.isLogged" to="/"
-        >Home
-      </router-link>
-      <router-link v-if="$store.state.users.status.isLogged" to="/login">
-        | Logout
-      </router-link>
-    </div>
     <router-view />
     <notifications position="top center" />
   </div>
 </template>
 
+<script>
+import Vue from "vue";
+import { Component } from "vue-property-decorator";
+import UserService from "./core/services/UserService";
+
+@Component({
+  components: {}
+})
+export default class App extends Vue {
+  userLogged = false;
+  constructor() {
+    super();
+  }
+}
+</script>
+
 <style lang="scss">
 @import "./assets/scss/vars";
-body {
-  color: $primary;
-  background: $fourth;
-}
+
 #app {
   font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
+}
+
+.dark {
+  background: $fourth-a;
+  margin: 0;
 }
 
 #nav {

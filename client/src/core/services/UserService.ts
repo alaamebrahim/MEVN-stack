@@ -39,11 +39,7 @@ export default class UserService {
               .toString()
           );
           // save token to localStorage
-          localStorage.setItem("token", res.data.token);
-          localStorage.setItem(
-            "userPermissions",
-            JSON.stringify(res.data.loggedUser.userPermissions)
-          );
+          localStorage.setItem("userData", JSON.stringify(res.data));
           // returned object
           return {
             success: true,
@@ -58,5 +54,42 @@ export default class UserService {
           user: null
         };
       });
+  }
+
+  /**
+   * Checks if there is logged in user or not
+   */
+  static isAuthenticated(): boolean {
+    const userDataObj = this.getUserData();
+    if (userDataObj === null) {
+      return false;
+    }
+    return !(userDataObj.token === null || userDataObj.loggedUser === null);
+  }
+
+  /**
+   * Removes authenticated user localStorage
+   */
+  static unAuthenticateUser() {
+    localStorage.removeItem("userData");
+  }
+
+  /**
+   * Get logged user token || null
+   */
+  static getUserToken() {
+    if (this.isAuthenticated()) {
+      return this.getUserData().token;
+    }
+    return null;
+  }
+
+  /**
+   * Get logged user object from storage.
+   */
+  static getUserData() {
+    const userData = localStorage.getItem("userData");
+    if (userData === null) return null;
+    return JSON.parse(userData);
   }
 }

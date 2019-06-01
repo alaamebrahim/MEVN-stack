@@ -1,4 +1,5 @@
 import axios from "axios";
+import UserService from "@/core/services/UserService";
 
 export default class ApiService {
   /**
@@ -7,8 +8,11 @@ export default class ApiService {
    */
   authHeader() {
     // return authorization header with jwt token
-    let token = localStorage.getItem("token");
-    let user = localStorage.getItem("user");
+    let token = UserService.getUserToken();
+    let user =
+      UserService.getUserData() === null
+        ? null
+        : UserService.getUserData().loggedUser;
 
     if (user && token) {
       return { Authorization: "Bearer " + token };

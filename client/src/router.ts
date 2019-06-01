@@ -6,6 +6,8 @@ import store from "./store";
 import NotifyService from "@/core/services/NotifyService";
 import NotFound from "@/core/components/NotFound.vue";
 import { i18n } from "@/i18n";
+import UserService from "@/core/services/UserService";
+import HelloWorld from "@/core/components/HelloWorld.vue";
 
 Vue.use(Router);
 
@@ -17,7 +19,17 @@ const router = new Router({
       component: Home,
       meta: {
         permissions: ["view_admin"]
-      }
+      },
+      children: [
+        {
+          path: "test",
+          name: "test",
+          component: HelloWorld,
+          meta: {
+            permissions: ["view_admin"]
+          }
+        }
+      ]
     },
     {
       path: "/login",
@@ -32,10 +44,9 @@ router.beforeEach((to, from, next) => {
   // redirect to login page if not logged in and trying to access a restricted page
   const publicPages = ["/login"];
   const authRequired = !publicPages.includes(to.path);
-  const loggedIn = localStorage.getItem("token");
+  const loggedIn = UserService.isAuthenticated();
   // Check if user is logged in
   if (authRequired && !loggedIn) {
-    console.log("0");
     return next({ name: "login" });
   } else {
     // Check user permissions for the next route
