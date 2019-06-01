@@ -7,7 +7,7 @@ import NotifyService from "@/core/services/NotifyService";
 import NotFound from "@/core/components/NotFound.vue";
 import { i18n } from "@/i18n";
 import UserService from "@/core/services/UserService";
-import HelloWorld from "@/core/components/HelloWorld.vue";
+import dashboard from "@/core/routes/dashboard";
 
 Vue.use(Router);
 
@@ -15,21 +15,16 @@ const router = new Router({
   routes: [
     {
       path: "/",
+      redirect: { name: "home" }
+    },
+    {
+      path: "/dashboard",
       name: "home",
       component: Home,
       meta: {
         permissions: ["view_admin"]
       },
-      children: [
-        {
-          path: "test",
-          name: "test",
-          component: HelloWorld,
-          meta: {
-            permissions: ["view_admin"]
-          }
-        }
-      ]
+      children: dashboard
     },
     {
       path: "/login",

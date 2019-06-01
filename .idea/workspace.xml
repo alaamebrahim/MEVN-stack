@@ -2,23 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="59f12e91-8980-47c3-ac61-a37314305fee" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/dictionaries/alaa.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/assets/scss/_base.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/core/views/layout/Navbar.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/core/views/layout/Sidebar.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/core/routes/dashboard.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/App.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/assets/scss/_vars.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/assets/scss/_vars.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/core/components/users/Login.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/core/components/users/Login.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/core/services/ApiService.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/core/services/ApiService.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/core/services/UserService.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/core/services/UserService.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/core/store/users.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/core/store/users.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/core/views/About.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/core/views/Home.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/core/views/Home.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/core/routes/users.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/core/routes/users.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/router.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/router.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -32,19 +19,25 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/src/core/views/Home.vue">
+        <entry file="file://$PROJECT_DIR$/client/src/core/routes/dashboard.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="378">
-              <caret line="24" column="7" lean-forward="true" selection-start-line="24" selection-start-column="7" selection-end-line="24" selection-end-column="7" />
+            <state relative-caret-position="252">
+              <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+              <folding>
+                <element signature="e#0#48#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/src/core/views/layout/Navbar.vue">
+        <entry file="file://$PROJECT_DIR$/client/src/core/routes/users.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="215">
-              <caret line="23" column="27" selection-start-line="23" selection-start-column="27" selection-end-line="23" selection-end-column="27" />
+            <state relative-caret-position="273">
+              <caret line="13" selection-start-line="13" selection-end-line="13" />
+              <folding>
+                <element signature="e#0#41#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -52,13 +45,15 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/client/src/router.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="28" column="31" selection-start-line="28" selection-start-column="31" selection-end-line="28" selection-end-column="31" />
-              <folding>
-                <element signature="e#0#22#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="-294">
+              <caret line="9" selection-start-line="9" selection-end-line="9" />
             </state>
           </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/src/shims-tsx.d.ts">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
     </leaf>
@@ -120,8 +115,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/client/config/prod.env.js" />
-        <option value="$PROJECT_DIR$/client/src/core/services/apiService.js" />
         <option value="$PROJECT_DIR$/client/src/tsconfig.json" />
         <option value="$PROJECT_DIR$/client/src/core/models/userLogin.ts" />
         <option value="$PROJECT_DIR$/client/test/unit/jest.conf.js" />
@@ -134,7 +127,6 @@
         <option value="$PROJECT_DIR$/client/src/views/Login.vue" />
         <option value="$PROJECT_DIR$/client/public/index.html" />
         <option value="$PROJECT_DIR$/client/src/core/views/Login.vue" />
-        <option value="$PROJECT_DIR$/client/src/core/routes/users.ts" />
         <option value="$PROJECT_DIR$/client/package.json" />
         <option value="$PROJECT_DIR$/client/src/core/services/apiService.ts" />
         <option value="$PROJECT_DIR$/client/src/core/services/userService.ts" />
@@ -167,9 +159,12 @@
         <option value="$PROJECT_DIR$/client/src/core/services/UserService.ts" />
         <option value="$PROJECT_DIR$/client/src/core/components/users/Login.vue" />
         <option value="$PROJECT_DIR$/client/src/core/views/layout/Sidebar.vue" />
-        <option value="$PROJECT_DIR$/client/src/core/views/Home.vue" />
         <option value="$PROJECT_DIR$/client/src/App.vue" />
         <option value="$PROJECT_DIR$/client/src/core/views/layout/Navbar.vue" />
+        <option value="$PROJECT_DIR$/client/src/core/views/Home.vue" />
+        <option value="$PROJECT_DIR$/client/src/core/routes/admin.ts" />
+        <option value="$PROJECT_DIR$/client/src/core/routes/users.ts" />
+        <option value="$PROJECT_DIR$/client/src/core/routes/dashboard.ts" />
         <option value="$PROJECT_DIR$/client/src/router.ts" />
       </list>
     </option>
@@ -219,16 +214,7 @@
               <item name="client" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="core" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="twitterJs" type="b2602c69:ProjectViewProjectNode" />
-              <item name="twitterJs" type="462c0819:PsiDirectoryNode" />
-              <item name="client" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="core" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="users" type="462c0819:PsiDirectoryNode" />
+              <item name="routes" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="twitterJs" type="b2602c69:ProjectViewProjectNode" />
@@ -237,22 +223,6 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="core" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="twitterJs" type="b2602c69:ProjectViewProjectNode" />
-              <item name="twitterJs" type="462c0819:PsiDirectoryNode" />
-              <item name="client" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="core" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="layout" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="twitterJs" type="b2602c69:ProjectViewProjectNode" />
-              <item name="twitterJs" type="462c0819:PsiDirectoryNode" />
-              <item name="client" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="locales" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="twitterJs" type="b2602c69:ProjectViewProjectNode" />
@@ -363,7 +333,7 @@
       <workItem from="1559246514994" duration="6414000" />
       <workItem from="1559293159143" duration="3023000" />
       <workItem from="1559324217695" duration="117000" />
-      <workItem from="1559374824980" duration="12621000" />
+      <workItem from="1559374824980" duration="15791000" />
     </task>
     <task id="LOCAL-00001" summary="finish server-side bearer authentication">
       <created>1558646046088</created>
@@ -383,7 +353,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="108452000" />
+    <option name="totallyTimeSpent" value="111622000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1366" y="0" width="1366" height="729" extended-state="6" />
@@ -431,9 +401,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/client/src/shims-vue.d.ts">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/.browserslistrc" />
     <entry file="file://$PROJECT_DIR$/client/.gitignore">
       <provider selected="true" editor-type-id="text-editor" />
@@ -621,13 +588,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/core/routes/users.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="5" selection-start-line="5" selection-end-line="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/node_modules/bootstrap/scss/_variables.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="21">
@@ -646,16 +606,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="336">
           <caret line="22" column="29" lean-forward="true" selection-start-line="22" selection-start-column="29" selection-end-line="22" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/i18n.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
-          <caret line="17" column="5" lean-forward="true" selection-start-line="13" selection-start-column="4" selection-end-line="17" selection-end-column="5" />
-          <folding>
-            <element signature="e#0#22#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -723,16 +673,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/core/views/Home.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="24" column="7" lean-forward="true" selection-start-line="24" selection-start-column="7" selection-end-line="24" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/shims-tsx.d.ts">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/src/core/views/layout/Navbar.vue">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="215">
@@ -740,13 +680,50 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/router.ts">
+    <entry file="file://$PROJECT_DIR$/client/src/shims-tsx.d.ts">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/core/views/Home.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="28" column="31" selection-start-line="28" selection-start-column="31" selection-end-line="28" selection-end-column="31" />
+        <state relative-caret-position="189">
+          <caret line="12" column="18" lean-forward="true" selection-start-line="12" selection-start-column="18" selection-end-line="12" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/i18n.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="18" column="5" lean-forward="true" selection-start-line="6" selection-start-column="2" selection-end-line="18" selection-end-column="5" />
           <folding>
             <element signature="e#0#22#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/core/routes/dashboard.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+          <folding>
+            <element signature="e#0#48#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/core/routes/users.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="273">
+          <caret line="13" selection-start-line="13" selection-end-line="13" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/router.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-294">
+          <caret line="9" selection-start-line="9" selection-end-line="9" />
         </state>
       </provider>
     </entry>
