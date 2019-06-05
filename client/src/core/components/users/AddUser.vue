@@ -73,12 +73,10 @@
 <script lang="ts">
 import { Component, Vue, Watch } from "vue-property-decorator";
 import UserService from "@/core/services/UserService";
-import HelloWorld from "@/core/components/HelloWorld.vue";
-import Table from "@/core/components/common/Table.vue";
 
 @Component({
-  components: { Table, HelloWorld },
-  props: ["items", "submit"]
+  components: {},
+  props: ["submit"]
 })
 export default class AddUser extends Vue {
   userService: UserService;
@@ -99,13 +97,22 @@ export default class AddUser extends Vue {
     this.getAllRoles();
   }
 
+  /**
+   * Watch submission of new user form parent
+   *
+   * */
   @Watch("submit")
   onSubmitClicked() {
+    //TODO find a better way to perform this operation or just make adding new user in a new route/component.
     if (this.$props.submit > 0) {
       this.addNewUser();
     }
   }
 
+  /**
+   * Add a new user operation
+   * including frontend validation process
+   * */
   addNewUser() {}
 
   /**
