@@ -7,7 +7,7 @@
   <!--  </div>-->
   <div>
     <b-navbar toggleable="lg" type="dark" variant="info" fixed>
-      <b-navbar-brand to="/home">
+      <b-navbar-brand to="/dashboard">
         <img
           alt="Vue logo"
           src="../../../assets/logo.png"

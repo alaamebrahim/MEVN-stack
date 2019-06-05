@@ -3,8 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="59f12e91-8980-47c3-ac61-a37314305fee" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/core/views/Home.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/core/views/Home.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/core/views/layout/Sidebar.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/core/components/users/ViewUsers.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/core/components/users/ViewUsers.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/core/views/layout/Navbar.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/core/views/layout/Navbar.vue" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -17,6 +17,27 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/src/core/components/users/ViewUsers.vue">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="141">
+              <caret line="29" column="24" lean-forward="true" selection-start-line="29" selection-start-column="24" selection-end-line="29" selection-end-column="24" />
+              <folding>
+                <element signature="e#1280#1668#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/client/src/core/views/layout/Navbar.vue">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="189">
+              <caret line="9" column="36" selection-start-line="9" selection-start-column="36" selection-end-line="9" selection-end-column="36" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/src/core/routes/dashboard.ts">
           <provider selected="true" editor-type-id="text-editor">
@@ -38,10 +59,10 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/src/core/views/Home.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="399">
+            <state relative-caret-position="337">
               <caret line="19" column="2" lean-forward="true" selection-start-line="19" selection-start-column="2" selection-end-line="19" selection-end-column="2" />
               <folding>
                 <element signature="e#213#269#0" expanded="true" />
@@ -61,7 +82,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>createLintingRule</find>
       <find>main.js</find>
       <find>main.</find>
       <find>resolve:</find>
@@ -91,6 +111,7 @@
       <find>this.$store</find>
       <find>onSu</find>
       <find>Sidebar</find>
+      <find>HelloW</find>
     </findStrings>
     <replaceStrings>
       <replace>import</replace>
@@ -137,7 +158,6 @@
         <option value="$PROJECT_DIR$/client/src/core/routes/admin.ts" />
         <option value="$PROJECT_DIR$/client/src/router.ts" />
         <option value="$PROJECT_DIR$/client/src/core/components/users/ViewUsers.ts" />
-        <option value="$PROJECT_DIR$/client/src/core/views/layout/Navbar.vue" />
         <option value="$PROJECT_DIR$/client/src/core/services/LoginService.ts" />
         <option value="$PROJECT_DIR$/server/Http/controllers/LoginController.js" />
         <option value="$PROJECT_DIR$/server/routes/index.js" />
@@ -151,7 +171,6 @@
         <option value="$PROJECT_DIR$/client/src/core/store/login.module.ts" />
         <option value="$PROJECT_DIR$/client/src/store.ts" />
         <option value="$PROJECT_DIR$/client/src/core/store/users.module.ts" />
-        <option value="$PROJECT_DIR$/client/src/core/components/users/ViewUsers.vue" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/client/src/App.vue" />
         <option value="$PROJECT_DIR$/client/src/main.ts" />
@@ -161,6 +180,8 @@
         <option value="$PROJECT_DIR$/client/src/core/routes/dashboard.ts" />
         <option value="$PROJECT_DIR$/client/src/core/routes/users.ts" />
         <option value="$PROJECT_DIR$/client/src/core/views/Home.vue" />
+        <option value="$PROJECT_DIR$/client/src/core/components/users/ViewUsers.vue" />
+        <option value="$PROJECT_DIR$/client/src/core/views/layout/Navbar.vue" />
       </list>
     </option>
   </component>
@@ -207,7 +228,24 @@
               <item name="client" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="core" type="462c0819:PsiDirectoryNode" />
-              <item name="routes" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="twitterJs" type="b2602c69:ProjectViewProjectNode" />
+              <item name="twitterJs" type="462c0819:PsiDirectoryNode" />
+              <item name="client" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="core" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="users" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="twitterJs" type="b2602c69:ProjectViewProjectNode" />
+              <item name="twitterJs" type="462c0819:PsiDirectoryNode" />
+              <item name="client" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="core" type="462c0819:PsiDirectoryNode" />
+              <item name="config" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="twitterJs" type="b2602c69:ProjectViewProjectNode" />
@@ -332,7 +370,7 @@
       <workItem from="1559374824980" duration="31669000" />
       <workItem from="1559485544362" duration="9516000" />
       <workItem from="1559504915429" duration="1273000" />
-      <workItem from="1559773343029" duration="2634000" />
+      <workItem from="1559773343029" duration="2749000" />
     </task>
     <task id="LOCAL-00001" summary="finish server-side bearer authentication">
       <created>1558646046088</created>
@@ -352,7 +390,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="140923000" />
+    <option name="totallyTimeSpent" value="141038000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1366" height="729" extended-state="6" />
@@ -497,20 +535,6 @@
           <folding>
             <element signature="e#0#22#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/core/components/HelloWorld.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="113">
-          <caret line="98" lean-forward="true" selection-start-line="98" selection-end-line="98" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/core/views/layout/Navbar.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="11" column="10" lean-forward="true" selection-start-line="11" selection-start-column="10" selection-end-line="11" selection-end-column="10" />
         </state>
       </provider>
     </entry>
@@ -683,17 +707,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/core/components/users/ViewUsers.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="253">
-          <caret line="95" column="25" selection-start-line="95" selection-start-column="25" selection-end-line="95" selection-end-column="25" />
-          <folding>
-            <element signature="e#837#893#0" expanded="true" />
-            <element signature="e#1280#1668#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/src/core/components/common/Table.vue">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1092">
@@ -743,13 +756,37 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/core/components/HelloWorld.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1625">
+          <caret line="98" selection-start-line="98" selection-end-line="98" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/client/src/core/views/Home.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
+        <state relative-caret-position="337">
           <caret line="19" column="2" lean-forward="true" selection-start-line="19" selection-start-column="2" selection-end-line="19" selection-end-column="2" />
           <folding>
             <element signature="e#213#269#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/core/components/users/ViewUsers.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="141">
+          <caret line="29" column="24" lean-forward="true" selection-start-line="29" selection-start-column="24" selection-end-line="29" selection-end-column="24" />
+          <folding>
+            <element signature="e#1280#1668#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/core/views/layout/Navbar.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="9" column="36" selection-start-line="9" selection-start-column="36" selection-end-line="9" selection-end-column="36" />
         </state>
       </provider>
     </entry>
