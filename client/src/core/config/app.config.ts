@@ -5,6 +5,11 @@ export interface AppConfig {
 }
 
 const appConfig = {
+
+  /**
+   * API url
+   */
+  apiUrl: "http://localhost:3000/api/",
   /**
    * Application title.
    */

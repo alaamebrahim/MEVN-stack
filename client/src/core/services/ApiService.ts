@@ -1,6 +1,6 @@
 import axios from "axios";
 import LoginService from "@/core/services/LoginService";
-
+import appConfig from '@/core/config/app.config';
 export default class ApiService {
   /**
    * Prepares Auth header to be sent with each request
@@ -24,8 +24,8 @@ export default class ApiService {
    * Returns api url depends on current enironment
    * @returns {string}
    */
-  getApi() {
-    return "http://localhost:3000/api/";
+  getApi(): string {
+    return appConfig.apiUrl;
   }
 
   fetch(url: string, method: string, data: any): Promise<any> {
