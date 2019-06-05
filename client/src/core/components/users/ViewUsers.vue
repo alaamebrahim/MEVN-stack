@@ -8,13 +8,17 @@
           </b-button>
         </b-button-group>
         <b-modal
-          :busy="true"
+          slot="modal-footer"
           id="add_new_user_modal"
           scrollable
           :title="$t('users.add_new')"
+          @hide="preventDefault"
           @ok="addNewUser"
         >
-          <AddUser />
+          <AddUser :submit="submit" />
+          <!--          <template slot="modal-footer" slot-scope="{ close }">-->
+          <!--            <span></span>-->
+          <!--          </template>-->
         </b-modal>
       </b-col>
     </b-row>
@@ -63,6 +67,7 @@ export default class ViewUsers extends Vue {
     }
   ];
   userService: UserService;
+  submit = 0;
 
   constructor() {
     super();
@@ -71,6 +76,10 @@ export default class ViewUsers extends Vue {
 
   created() {
     this.getAllUsers();
+  }
+
+  addNewUser() {
+    this.submit += 1;
   }
 
   getAllUsers() {
@@ -82,8 +91,10 @@ export default class ViewUsers extends Vue {
     });
   }
 
-  addNewUser(bvModalEvt: any) {
-    bvModalEvt.preventDefault();
+  preventDefault(bvModalEvt: any) {
+    if (!["headerclose", "cancel"].includes(bvModalEvt.trigger))
+      bvModalEvt.preventDefault();
+    else this.submit = 0;
   }
 }
 </script>

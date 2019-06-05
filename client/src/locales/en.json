@@ -25,7 +25,10 @@
     "username": "Username",
     "password": "Password",
     "email": "Email",
-    "roles": "User role"
+    "roles": "User role",
+    "status": "Status",
+    "active": "Active",
+    "not_active": "Inactive"
   },
   "buttons": {
     "add": "Add new",
@@ -36,5 +39,8 @@
     "close": "Close",
     "clear": "Clear"
   },
-  "general_error": "An error has happened"
+  "general_error": "An error has happened",
+  "general": {
+    "select_option": "-- Please select an option --"
+  }
 }

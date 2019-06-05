@@ -17,6 +17,7 @@ It's a very simple starter kit of MEVN stack to get me started with simple JS pr
 - Winston.
 - Vue-notifications.
 - vuejs-i18n.
+- VeeValidate
 
 # ALERT!!
 

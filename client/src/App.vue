@@ -8,7 +8,6 @@
 <script>
 import Vue from "vue";
 import { Component } from "vue-property-decorator";
-import LoginService from "./core/services/LoginService";
 
 @Component({
   components: {}

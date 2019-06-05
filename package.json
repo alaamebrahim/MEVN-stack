@@ -38,6 +38,7 @@
     "passport-local": "^1.0.0",
     "sequelize": "^5.8.6",
     "sequelize-cli": "^5.4.0",
+    "vee-validate": "^2.2.9",
     "vue": "^2.6.10",
     "vue-class-component": "^7.0.2",
     "vue-i18n": "^8.11.2",
