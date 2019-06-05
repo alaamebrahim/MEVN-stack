@@ -1,4 +1,5 @@
 export interface AppConfig {
+  apiUrl: string;
   appTitle: string;
   maxLoginTries: number;
   secondsToBlockUserLogin: number;
