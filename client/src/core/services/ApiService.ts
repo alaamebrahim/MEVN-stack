@@ -1,12 +1,12 @@
 import axios from "axios";
 import LoginService from "@/core/services/LoginService";
-import appConfig from '@/core/config/app.config';
+import appConfig from "@/core/config/app.config";
 export default class ApiService {
   /**
    * Prepares Auth header to be sent with each request
    * @returns {{Authorization: string}|{}}
    */
-  authHeader() {
+  protected authHeader() {
     // return authorization header with jwt token
     let token = LoginService.getUserToken();
     let user =
@@ -22,12 +22,19 @@ export default class ApiService {
 
   /**
    * Returns api url depends on current enironment
-   * @returns {string}
+   * @returns string
    */
   getApi(): string {
     return appConfig.apiUrl;
   }
 
+  /**
+   * Make REQUESTS of any provided type
+   * @param url
+   * @param method
+   * @param data
+   * @return Promise<any>
+   */
   fetch(url: string, method: string, data: any): Promise<any> {
     return axios.request({
       headers: this.authHeader(),
@@ -37,6 +44,11 @@ export default class ApiService {
     });
   }
 
+  /**
+   * Make GET requests to backend api
+   * @param url
+   * @return Promise<any>
+   */
   get(url: string): Promise<any> {
     return axios.get(this.getApi() + url, {
       method: "GET",
