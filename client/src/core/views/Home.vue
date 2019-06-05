@@ -13,15 +13,10 @@
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
-import HelloWorld from "@/core/components/HelloWorld.vue";
-import Sidebar from "./layout/Sidebar.vue";
 import Navbar from "./layout/Navbar.vue";
 
 @Component({
-  components: {
-    Sidebar,
-    Navbar
-  }
+  components: { Navbar }
 })
 export default class Home extends Vue {}
 </script>
