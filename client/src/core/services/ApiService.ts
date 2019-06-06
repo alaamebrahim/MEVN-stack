@@ -35,7 +35,7 @@ export default class ApiService {
    * @param data
    * @return Promise<any>
    */
-  fetch(url: string, method: string, data: any): Promise<any> {
+  fetch(url: string, method: any, data: any): Promise<any> {
     return axios.request({
       headers: this.authHeader(),
       method: method,
