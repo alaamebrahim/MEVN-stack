@@ -2,21 +2,21 @@ import { Module } from "vuex";
 
 const usersModule: Module<any, any> = {
   state: {
-    submitted: false
+    userSaved: false
   },
   mutations: {
-    SET_FORM_SUBMIT(state, submitted) {
-      state.submitted = submitted;
+    SET_USER_SAVED(state, saved) {
+      state.userSaved = saved;
     }
   },
   actions: {
-    setFormSubmitted(context, submitted) {
-      context.commit("SET_FORM_SUBMIT", submitted);
+    setUserSaved(context, saved) {
+      context.commit("SET_USER_SAVED", saved);
     }
   },
   getters: {
-    getSubmitStatus(state) {
-      return state.submitted;
+    getSaveStatus(state) {
+      return state.userSaved;
     }
   }
 };

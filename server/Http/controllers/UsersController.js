@@ -35,4 +35,35 @@ export default class UsersController {
       }
     });
   }
+
+  /**
+   * Add or update a user
+   * @param req
+   * @param res
+   * @param next
+   * @constructor
+   */
+  static AddUpdateUser(req, res, next) {
+    const user = req.body;
+    if (user.id !== undefined && user.id !== null) user.createdAt = new Date();
+    user.updatedAt = new Date();
+
+    users
+      .create(user)
+      .then(response => {
+        return res.json({
+          success: true,
+          data: response
+        });
+      })
+      .catch(err => {
+        console.log(err);
+        return res.json({
+          success: false,
+          errorField: err.errors[0].path,
+          errorValidationKey: err.errors[0].validatorKey,
+          errorValue: err.errors[0].value
+        });
+      });
+  }
 }

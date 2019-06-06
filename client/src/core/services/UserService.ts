@@ -45,4 +45,19 @@ export default class UserService {
         };
       });
   }
+
+  /**
+   * Insert/update a user
+   * @param form
+   */
+  addUpdateUser(form: any) : Promise<any>{
+    return this.apiService.post('users/add-update-user', form).then(res => {
+      return res.data
+    }).catch(err => {
+      NotifyService.alert(i18n.tc("general_error"));
+      return {
+        success: false
+      };
+    })
+  }
 }

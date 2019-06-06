@@ -8,17 +8,15 @@
           </b-button>
         </b-button-group>
         <b-modal
+          v-model="userModal"
           slot="modal-footer"
           id="add_new_user_modal"
           scrollable
           :title="$t('users.add_new')"
+          :hide-footer="true"
           @hide="preventDefault"
-          @ok="addNewUser"
         >
-          <AddUser :submit="submit" />
-          <!--          <template slot="modal-footer" slot-scope="{ close }">-->
-          <!--            <span></span>-->
-          <!--          </template>-->
+          <AddUser />
         </b-modal>
       </b-col>
     </b-row>
@@ -27,17 +25,22 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue } from "vue-property-decorator";
+import { Component, Vue, Watch } from "vue-property-decorator";
 import UserService from "@/core/services/UserService";
 import Table from "@/core/components/common/Table.vue";
 import AddUser from "@/core/components/users/AddUser.vue";
+import { mapState } from "vuex";
 
 @Component({
   components: { AddUser, Table },
-  props: ["items"]
+  props: ["items"],
+  computed: mapState({
+    userSaved: (state: any) => state.userSaved
+  })
 })
 export default class ViewUsers extends Vue {
   users: any = [];
+  userModal = false;
   fields = [
     {
       key: "id",
@@ -66,8 +69,6 @@ export default class ViewUsers extends Vue {
     }
   ];
   userService: UserService;
-  submit = 0;
-
   constructor() {
     super();
     this.userService = new UserService();
@@ -77,8 +78,18 @@ export default class ViewUsers extends Vue {
     this.getAllUsers();
   }
 
-  addNewUser() {
-    this.submit += 1;
+  /**
+   * Lifecycle hook
+   */
+  mounted(): void {
+    const vm = this;
+    this.userModal = false;
+    this.$store.watch(
+      (state, getters) => getters.getSaveStatus,
+      (newValue, oldValue) => {
+        this.userModal = !newValue;
+      }
+    );
   }
 
   getAllUsers() {
@@ -93,7 +104,7 @@ export default class ViewUsers extends Vue {
   preventDefault(bvModalEvt: any) {
     if (!["headerclose", "cancel"].includes(bvModalEvt.trigger))
       bvModalEvt.preventDefault();
-    else this.submit = 0;
+    else this.getAllUsers();
   }
 }
 </script>

@@ -24,8 +24,8 @@ export default class ApiService {
    * Returns api url depends on current enironment
    * @returns string
    */
-  getApi(): string {
-    return appConfig.apiUrl;
+  getApi(url: string): string {
+    return appConfig.apiUrl + url;
   }
 
   /**
@@ -39,8 +39,8 @@ export default class ApiService {
     return axios.request({
       headers: this.authHeader(),
       method: method,
-      url: this.getApi() + url,
-      data: data
+      url: this.getApi(url),
+      data: data,
     });
   }
 
@@ -50,8 +50,19 @@ export default class ApiService {
    * @return Promise<any>
    */
   get(url: string): Promise<any> {
-    return axios.get(this.getApi() + url, {
+    return axios.get(this.getApi(url), {
       method: "GET",
+      headers: this.authHeader()
+    });
+  }
+
+  /**
+   * Make POST requests to backend api
+   * @param url
+   * @param body
+   */
+  post(url: string, body: any) {
+    return axios.post(this.getApi(url), body, {
       headers: this.authHeader()
     });
   }

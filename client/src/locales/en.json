@@ -28,7 +28,31 @@
     "roles": "User role",
     "status": "Status",
     "active": "Active",
-    "not_active": "Inactive"
+    "not_active": "Inactive",
+    "errors": {
+      "username": {
+        "required": "Username is required",
+        "minLength": "Username length can not be less than {chars} letters."
+      },
+      "email": {
+        "required": "Email is required.",
+        "isEmail": "This is not valid email."
+      },
+      "password": {
+        "required": "Password is required",
+        "minLength": "Password length can not be less than {chars} letters."
+      },
+      "roleId": {
+        "required": "User must have a role."
+      },
+      "isActive": {
+        "required": "You should choose if this user is active or not."
+      },
+      "duplicate_name": "Username already exists.",
+      "duplicate_email": "Email already exists."
+    },
+    "success": "Data saved successfully.",
+    "error": "Data not saved!, please make sure you entered valid data and try again."
   },
   "buttons": {
     "add": "Add new",
@@ -37,7 +61,8 @@
     "save": "Save",
     "cancel": "Cancel",
     "close": "Close",
-    "clear": "Clear"
+    "clear": "Clear",
+    "submit": "Submit"
   },
   "general_error": "An error has happened",
   "general": {
