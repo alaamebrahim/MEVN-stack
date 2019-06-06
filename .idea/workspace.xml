@@ -2,18 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="59f12e91-8980-47c3-ac61-a37314305fee" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/client/src/assets/scss/_modals.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/assets/scss/_base.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/assets/scss/_base.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/core/components/users/AddUser.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/core/components/users/AddUser.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/core/components/users/ViewUsers.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/core/components/users/ViewUsers.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/core/services/ApiService.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/core/services/ApiService.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/core/services/UserService.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/core/services/UserService.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/core/store/users.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/core/store/users.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/locales/en.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/locales/en.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/Http/controllers/UsersController.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/Http/controllers/UsersController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/database/models/users.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/database/models/users.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/routes/users.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/routes/users.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/core/components/common/Table.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/core/components/common/Table.vue" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -39,24 +28,14 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/client/src/core/components/users/ViewUsers.vue">
+        <entry file="file://$PROJECT_DIR$/client/src/core/components/common/Table.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="132">
-              <caret line="107" selection-start-line="107" selection-end-line="107" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/src/core/components/NotFound.vue">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/src/locales/en.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="192">
-              <caret line="34" column="76" lean-forward="true" selection-start-line="34" selection-start-column="76" selection-end-line="34" selection-end-column="76" />
+            <state relative-caret-position="-295">
+              <caret line="143" column="37" selection-start-line="143" selection-start-column="37" selection-end-line="143" selection-end-column="37" />
+              <folding>
+                <element signature="n#b-row#0;n#b-container#0;n#template#0;n#!!top" />
+                <element signature="e#3394#3457#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -93,7 +72,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>node-sass</find>
       <find>getter</find>
       <find>localStorage.setItem</find>
       <find>permission</find>
@@ -123,6 +101,7 @@
       <find>username</find>
       <find>$t</find>
       <find>i18n</find>
+      <find>data</find>
     </findStrings>
     <replaceStrings>
       <replace>import</replace>
@@ -168,7 +147,6 @@
         <option value="$PROJECT_DIR$/server/routes/index.js" />
         <option value="$PROJECT_DIR$/client/src/core/components/common/modal.ts" />
         <option value="$PROJECT_DIR$/client/src/core/components/common/Modal.vue" />
-        <option value="$PROJECT_DIR$/client/src/core/components/common/Table.vue" />
         <option value="$PROJECT_DIR$/client/src/core/store/login.module.ts" />
         <option value="$PROJECT_DIR$/client/src/store.ts" />
         <option value="$PROJECT_DIR$/client/src/core/config/app.config.ts" />
@@ -193,6 +171,7 @@
         <option value="$PROJECT_DIR$/client/src/locales/en.json" />
         <option value="$PROJECT_DIR$/server/Http/controllers/UsersController.js" />
         <option value="$PROJECT_DIR$/client/src/core/components/users/ViewUsers.vue" />
+        <option value="$PROJECT_DIR$/client/src/core/components/common/Table.vue" />
       </list>
     </option>
   </component>
@@ -241,6 +220,15 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="core" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="twitterJs" type="b2602c69:ProjectViewProjectNode" />
+              <item name="twitterJs" type="462c0819:PsiDirectoryNode" />
+              <item name="client" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="core" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="common" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="twitterJs" type="b2602c69:ProjectViewProjectNode" />
@@ -386,7 +374,7 @@
       <workItem from="1559773343029" duration="3746000" />
       <workItem from="1559810181403" duration="5067000" />
       <workItem from="1559817336158" duration="7733000" />
-      <workItem from="1559850128526" duration="7119000" />
+      <workItem from="1559850128526" duration="7600000" />
     </task>
     <task id="LOCAL-00001" summary="finish server-side bearer authentication">
       <created>1558646046088</created>
@@ -406,13 +394,13 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="161954000" />
+    <option name="totallyTimeSpent" value="162435000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1366" height="729" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17125838" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17125838" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -426,7 +414,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.35025382" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
-      <window_info anchor="bottom" x="1056" y="0" width="310" height="729" id="Terminal" order="10" visible="true" weight="0.37055838" />
+      <window_info active="true" anchor="bottom" x="1056" y="0" width="310" height="729" id="Terminal" order="10" visible="true" weight="0.20135364" />
       <window_info anchor="bottom" id="Messages" order="11" />
       <window_info anchor="bottom" id="TypeScript" order="12" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -548,17 +536,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="509">
           <caret line="30" lean-forward="true" selection-start-line="30" selection-end-line="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/core/components/common/Table.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1092">
-          <caret line="158" column="37" selection-start-line="158" selection-start-column="37" selection-end-line="158" selection-end-column="37" />
-          <folding>
-            <element signature="n#b-row#0;n#b-container#0;n#template#0;n#!!top" />
-            <element signature="n#b-row#2;n#b-container#0;n#template#0;n#!!top" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -766,13 +743,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/locales/en.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="34" column="76" lean-forward="true" selection-start-line="34" selection-start-column="76" selection-end-line="34" selection-end-column="76" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/server/Http/controllers/UsersController.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
@@ -780,6 +750,23 @@
           <folding>
             <element signature="e#15#63#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/core/components/NotFound.vue">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/locales/en.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3">
+          <caret line="34" column="76" lean-forward="true" selection-start-line="34" selection-start-column="76" selection-end-line="34" selection-end-column="76" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/core/components/users/ViewUsers.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="107" column="3" lean-forward="true" selection-start-line="107" selection-start-column="3" selection-end-line="107" selection-end-column="3" />
         </state>
       </provider>
     </entry>
@@ -793,13 +780,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/core/components/NotFound.vue">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/core/components/users/ViewUsers.vue">
+    <entry file="file://$PROJECT_DIR$/client/src/core/components/common/Table.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="107" selection-start-line="107" selection-end-line="107" />
+        <state relative-caret-position="-295">
+          <caret line="143" column="37" selection-start-line="143" selection-start-column="37" selection-end-line="143" selection-end-column="37" />
+          <folding>
+            <element signature="n#b-row#0;n#b-container#0;n#template#0;n#!!top" />
+            <element signature="e#3394#3457#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

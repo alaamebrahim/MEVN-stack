@@ -105,7 +105,7 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue } from "vue-property-decorator";
+import { Component, Vue, Watch } from "vue-property-decorator";
 import UserService from "@/core/services/UserService";
 
 @Component({
@@ -128,7 +128,6 @@ export default class Table extends Vue {
 
   constructor() {
     super();
-    const me = this;
     this.userService = new UserService();
   }
 
@@ -137,7 +136,12 @@ export default class Table extends Vue {
   }
 
   mounted() {
-    this.totalRows = this.users.length;
+    this.totalRows = this.$props.data.length;
+  }
+
+  @Watch("users")
+  usersChange() {
+    this.totalRows = this.$props.data.length;
   }
 
   setSelectedRows(items: any[]) {
