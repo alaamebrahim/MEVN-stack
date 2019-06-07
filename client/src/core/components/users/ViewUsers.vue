@@ -33,10 +33,7 @@ import { mapState } from "vuex";
 
 @Component({
   components: { AddUser, Table },
-  props: ["items"],
-  computed: mapState({
-    userSaved: (state: any) => state.userSaved
-  })
+  props: ["items"]
 })
 export default class ViewUsers extends Vue {
   users: any = [];
@@ -45,7 +42,7 @@ export default class ViewUsers extends Vue {
     {
       key: "id",
       sortable: true,
-      label: "#"
+      label: "ID"
     },
     {
       key: "name",
@@ -69,30 +66,23 @@ export default class ViewUsers extends Vue {
     }
   ];
   userService: UserService;
+
   constructor() {
     super();
     this.userService = new UserService();
   }
 
+  /**
+   * Lifecycle hook
+   * */
   created() {
     this.getAllUsers();
   }
 
   /**
-   * Lifecycle hook
-   */
-  mounted(): void {
-    const vm = this;
-    this.userModal = false;
-    this.$store.watch(
-      (state, getters) => getters.getSaveStatus,
-      (newValue, oldValue) => {
-        this.userModal = !newValue;
-      }
-    );
-  }
-
-  getAllUsers() {
+   * Retrieve users list from backend
+   * */
+  getAllUsers(): void {
     const me = this;
     this.userService.getUsers().then(res => {
       if (res.success) {
@@ -101,7 +91,11 @@ export default class ViewUsers extends Vue {
     });
   }
 
-  preventDefault(bvModalEvt: any) {
+  /**
+   * Prevent modal from closing
+   * @param bvModalEvt
+   */
+  preventDefault(bvModalEvt: any): void {
     if (!["headerclose", "cancel"].includes(bvModalEvt.trigger))
       bvModalEvt.preventDefault();
     else this.getAllUsers();

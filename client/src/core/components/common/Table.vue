@@ -117,8 +117,8 @@ export default class Table extends Vue {
   selectedItems: any[] = [];
   totalRows = 1;
   currentPage = 1;
-  perPage = 5;
-  pageOptions = [5, 10, 15];
+  perPage = 10;
+  pageOptions = [10, 15, 20, 25, 50, 100];
   sortBy = null;
   sortDesc = false;
   sortDirection = "asc";
@@ -135,11 +135,7 @@ export default class Table extends Vue {
     this.setSortOptions();
   }
 
-  mounted() {
-    this.totalRows = this.$props.data.length;
-  }
-
-  @Watch("users")
+  @Watch("data")
   usersChange() {
     this.totalRows = this.$props.data.length;
   }
